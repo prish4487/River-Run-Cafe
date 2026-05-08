@@ -1,0 +1,31 @@
+kind = "web"
+previewPath = "/"
+title = "Cafe Riverrun"
+version = "1.0.0"
+id = "artifacts/cafe-riverrun"
+router = "path"
+
+[[integratedSkills]]
+name = "react-vite"
+version = "1.0.0"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 19342
+
+[services.development]
+run = "pnpm --filter @workspace/cafe-riverrun run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/cafe-riverrun", "run", "build" ]
+publicDir = "artifacts/cafe-riverrun/dist/public"
+serve = "static"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "19342"
+BASE_PATH = "/"

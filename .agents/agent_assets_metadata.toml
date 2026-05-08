@@ -1,0 +1,14 @@
+uploads = []
+outputs = []
+
+[[generated]]
+id = "DTTnRDaiTT5VJjGTZNZT0"
+uri = "file://artifacts/cafe-riverrun/public/images/hero.png"
+type = "image"
+title = "Riverside cafe interior"
+
+[[generated]]
+id = "Drdde0YDAlcr1YI8AYEA6"
+uri = "file://artifacts/cafe-riverrun/public/images/coffee-prep.png"
+type = "image"
+title = "Coffee prep on wood"
