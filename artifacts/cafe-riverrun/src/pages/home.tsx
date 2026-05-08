@@ -196,20 +196,37 @@ export default function Home() {
           </div>
         </FadeIn>
 
-        <div className="grid md:grid-cols-2 gap-x-16 gap-y-10">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {[
-            { name: "The Riverrun Pour Over", price: "$8", desc: "Our signature blend, notes of dark chocolate, wild berries, and cedar. Served with a river-washed stone coaster." },
-            { name: "Forest Canopy Matcha", price: "$7", desc: "Ceremonial grade matcha whisked with oat milk, lightly sweetened with maple syrup." },
-            { name: "Cardamom Cortado", price: "$6", desc: "Equal parts espresso and steamed milk, infused with crushed green cardamom pods." },
-            { name: "Moss Glade Tart", price: "$9", desc: "Pistachio and almond tartlet with a delicate white chocolate ganache." }
+            { name: "The Riverrun Pour Over", price: "$8", desc: "Our signature blend — notes of dark chocolate, wild berries, and cedar.", img: "/images/menu-pour-over.png", tag: "Signature" },
+            { name: "Forest Canopy Matcha", price: "$7", desc: "Ceremonial grade matcha whisked with oat milk, lightly sweetened with maple syrup.", img: "/images/menu-matcha.png", tag: "Plant-Based" },
+            { name: "Cardamom Cortado", price: "$6", desc: "Equal parts espresso and steamed milk, infused with crushed green cardamom pods.", img: "/images/menu-cortado.png", tag: "Staff Pick" },
+            { name: "Moss Glade Tart", price: "$9", desc: "Pistachio and almond tartlet with a delicate white chocolate ganache.", img: "/images/menu-tart.png", tag: "Seasonal" }
           ].map((item, i) => (
             <FadeIn key={i} delay={0.1 * i}>
-              <div className="group border-b border-border/50 pb-6" data-testid={`menu-item-${i}`}>
-                <div className="flex justify-between items-baseline mb-2">
-                  <h3 className="text-xl font-serif text-primary group-hover:text-accent transition-colors">{item.name}</h3>
-                  <span className="text-secondary font-serif text-lg">{item.price}</span>
+              <div
+                className="group flex flex-col overflow-hidden border border-border/40 hover:border-accent/40 transition-all duration-500 hover:shadow-lg hover:-translate-y-1 bg-background"
+                data-testid={`menu-item-${i}`}
+              >
+                <div className="relative overflow-hidden aspect-square">
+                  <img
+                    src={item.img}
+                    alt={item.name}
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    data-testid={`menu-item-image-${i}`}
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-primary/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  <span className="absolute top-3 left-3 text-xs uppercase tracking-widest bg-secondary text-primary px-2 py-1 font-medium">
+                    {item.tag}
+                  </span>
                 </div>
-                <p className="text-muted-foreground font-light leading-relaxed">{item.desc}</p>
+                <div className="p-5 flex flex-col flex-1">
+                  <div className="flex justify-between items-baseline mb-2">
+                    <h3 className="text-base font-serif text-primary group-hover:text-accent transition-colors leading-snug">{item.name}</h3>
+                    <span className="text-secondary font-serif text-base ml-2 flex-shrink-0">{item.price}</span>
+                  </div>
+                  <p className="text-muted-foreground text-sm font-light leading-relaxed">{item.desc}</p>
+                </div>
               </div>
             </FadeIn>
           ))}

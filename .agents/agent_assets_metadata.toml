@@ -12,3 +12,27 @@ id = "Drdde0YDAlcr1YI8AYEA6"
 uri = "file://artifacts/cafe-riverrun/public/images/coffee-prep.png"
 type = "image"
 title = "Coffee prep on wood"
+
+[[generated]]
+id = "9wGCYScL583fo4MijBOy9"
+uri = "file://artifacts/cafe-riverrun/public/images/menu-pour-over.png"
+type = "image"
+title = "generated_image"
+
+[[generated]]
+id = "yO2hvY3dOIt3XewQrXnDW"
+uri = "file://artifacts/cafe-riverrun/public/images/menu-matcha.png"
+type = "image"
+title = "generated_image"
+
+[[generated]]
+id = "naZZftGwFqPXN1or7dthy"
+uri = "file://artifacts/cafe-riverrun/public/images/menu-cortado.png"
+type = "image"
+title = "generated_image"
+
+[[generated]]
+id = "DAq9esX3d30NsikEqDxTm"
+uri = "file://artifacts/cafe-riverrun/public/images/menu-tart.png"
+type = "image"
+title = "generated_image"
